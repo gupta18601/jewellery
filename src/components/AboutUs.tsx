@@ -17,7 +17,7 @@ export default function AboutUs() {
             piece is a work of art designed to last a lifetime.
           </p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+        <div className="rounded-lg shadow-md p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h2>
           <p className="text-gray-600 mb-4">
             To be the worlds most trusted and innovative jewelry brand, setting
@@ -35,7 +35,7 @@ export default function AboutUs() {
           </ul>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+        <div className="rounded-lg shadow-md p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h2>
           <p className="text-gray-600 mb-4">
             To create exceptional jewelry that combines traditional

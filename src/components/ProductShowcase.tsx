@@ -16,7 +16,7 @@ const products = [
     image: "/sapphire.jpg?height=300&width=300",
     price: 1499.99,
     description:
-      "Stunning sapphire pendant necklace featuring a deep blue gemstone surrounded by diamonds.",
+      "Stunning sapphire pendant necklace featuring a deep blue gemstone.",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const products = [
     image: "/emerald.jpg?height=300&width=300",
     price: 1799.99,
     description:
-      "Luxurious emerald bracelet featuring vibrant green stones set in 18k yellow gold.",
+      "Luxurious emerald bracelet featuring vibrant green stones set in 18k gold.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function ProductShowcase() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
+              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between items-center"
             >
               <Link href={`/products/${product.id}`}>
                 <Image
@@ -55,18 +55,15 @@ export default function ProductShowcase() {
                   alt={product.name}
                   width={300}
                   height={300}
-                  className="w-full h-64 object-cover"
+                  className="w-80 h-80 object-cover"
                 />
               </Link>
-              <div className="p-6">
+              <div className="p-6 flex flex-col justify-end items-center">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {product.name}
                 </h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-amber-600">
-                    ${product.price.toFixed(2)}
-                  </span>
                   <Link
                     href={`/products/${product.id}`}
                     className="bg-amber-600 text-white py-2 px-4 rounded hover:bg-amber-700 transition duration-300"
