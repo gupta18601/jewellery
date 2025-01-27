@@ -32,7 +32,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen flex items-center overflow-hidden">
       {images.map((image, index) => (
         <div
           key={image.src}
@@ -48,22 +48,20 @@ export default function Hero() {
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Exquisite Jewellery Craftsmanship
-          </h1>
-          <p className="text-xl md:text-2xl mb-8">
-            Discover the beauty of precious and semi-precious stones
-          </p>
-          <a
-            href="/contact-us"
-            className="bg-white text-gray-800 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300"
-          >
-            Contact Us
-          </a>
-        </div>
+      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+      <div className="container mx-auto px-6 relative z-20 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in-down">
+          Exquisite Jewelry & Precious Stones
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in-up">
+          Crafting Elegance, Importing Beauty, Exporting Excellence
+        </p>
+        <a
+          href="/contact-us"
+          className="bg-amber-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-amber-700 transition duration-300"
+        >
+          Discover Our Collection
+        </a>
       </div>
       <button
         onClick={prevImage}

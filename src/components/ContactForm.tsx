@@ -24,6 +24,7 @@ export default function ContactForm() {
     setSubmitStatus("idle");
 
     try {
+      // Here you would typically send the form data to a server
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       console.log("Form submitted:", formData);
@@ -36,7 +37,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-16">
+    <section
+      id="contact"
+      className="py-16 bg-white bg-opacity-80 rounded-lg shadow-lg"
+    >
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
           Contact Us
@@ -55,7 +59,7 @@ export default function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
               required
             />
           </div>
@@ -72,7 +76,7 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
               required
             />
           </div>
@@ -89,13 +93,13 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
               required
             ></textarea>
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded-3xl hover:bg-blue-600 transition duration-300"
+            className="w-full bg-amber-600 text-white py-2 px-4 rounded-md hover:bg-amber-700 transition duration-300"
             disabled={submitStatus === "success"}
           >
             Send Message

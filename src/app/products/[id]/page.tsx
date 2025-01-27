@@ -111,9 +111,6 @@ export default async function ProductPage({
               <li key={index}>{detail}</li>
             ))}
           </ul>
-          <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
-            Add to Cart
-          </button>
         </div>
       </div>
     </div>

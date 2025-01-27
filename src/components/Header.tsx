@@ -1,18 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
   return (
     <header className="bg-white shadow-md">
-      <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
+      <nav className="container mx-auto px-6 py-6 flex justify-between items-center">
         <Link href="/" passHref>
-          <Image
-            src="/logo1.png"
-            alt="Elegant jewellery piece"
-            height={100}
-            width={100}
-            style={{ height: "auto", width: "auto" }}
-          />
+          <h1 className="text-2xl font-bold">Shree Radha Govind Jewellers</h1>
         </Link>
         <div className="hidden md:flex space-x-6">
           <Link

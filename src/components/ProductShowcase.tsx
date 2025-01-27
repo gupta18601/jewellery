@@ -38,7 +38,7 @@ const products = [
 
 export default function ProductShowcase() {
   return (
-    <section id="products" className="py-16 bg-white">
+    <section id="products" className="py-16">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
           Our Exquisite Collection
@@ -47,7 +47,7 @@ export default function ProductShowcase() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-gray-100 rounded-lg overflow-hidden shadow-md"
+              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
             >
               <Link href={`/products/${product.id}`}>
                 <Image
@@ -55,19 +55,25 @@ export default function ProductShowcase() {
                   alt={product.name}
                   width={300}
                   height={300}
-                  className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-64 object-cover"
                 />
               </Link>
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-800">
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {product.name}
                 </h3>
-                <Link
-                  href={`/products/${product.id}`}
-                  className="mt-4 inline-block text-blue-600 hover:text-blue-800"
-                >
-                  View Details
-                </Link>
+                <p className="text-gray-600 mb-4">{product.description}</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-2xl font-bold text-amber-600">
+                    ${product.price.toFixed(2)}
+                  </span>
+                  <Link
+                    href={`/products/${product.id}`}
+                    className="bg-amber-600 text-white py-2 px-4 rounded hover:bg-amber-700 transition duration-300"
+                  >
+                    View Details
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
