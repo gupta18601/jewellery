@@ -47,22 +47,22 @@ export default function ProductShowcase() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between items-center"
+              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col items-center"
             >
-              <Link href={`/products/${product.id}`}>
+              <Link className="w-full block" href={`/products/${product.id}`}>
                 <Image
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
                   width={300}
                   height={300}
-                  className="w-80 h-80 object-cover"
+                  className="w-full h-80 object-cover border-b border-black-500"
                 />
               </Link>
               <div className="p-6 flex flex-col justify-end items-center">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
+                <p className="text-gray-600 mb-4 line-clamp-2">{product.description}</p>
                 <div className="flex justify-between items-center">
                   <Link
                     href={`/products/${product.id}`}

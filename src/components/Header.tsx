@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
@@ -5,7 +6,13 @@ export default function Header() {
     <header className="bg-white shadow-md">
       <nav className="container mx-auto px-6 py-6 flex justify-between items-center">
         <Link href="/" passHref>
-          <h1 className="text-2xl font-bold">Shree Radha Govind Jewellers</h1>
+          <Image
+            src="/logo.png"
+            alt="Elegant jewellery piece"
+            height={300}
+            width={100}
+            style={{ height: "auto", width: "auto" }}
+          />
         </Link>
         <div className="hidden md:flex space-x-6">
           <Link
